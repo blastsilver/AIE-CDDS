@@ -5,5 +5,30 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="Source Files\winAPI">
+      <UniqueIdentifier>{3f03264c-d317-4f27-aea5-717c50fc7703}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\Application.cpp">
+      <Filter>Source Files\winAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="source\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Window.cpp">
+      <Filter>Source Files\winAPI</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\Application.h">
+      <Filter>Source Files\winAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="source\main.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Window.h">
+      <Filter>Source Files\winAPI</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
