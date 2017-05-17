@@ -19,14 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\Application.cpp" />
     <ClCompile Include="source\main.cpp" />
-    <ClCompile Include="source\Window.cpp" />
+    <ClCompile Include="source\WinAPI.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\Application.h" />
     <ClInclude Include="source\main.h" />
-    <ClInclude Include="source\Window.h" />
+    <ClInclude Include="source\WinAPI.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{498DD418-5F64-4242-83E6-0DE973E10BE8}</ProjectGuid>

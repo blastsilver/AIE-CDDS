@@ -10,24 +10,18 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="source\Application.cpp">
-      <Filter>Source Files\winAPI</Filter>
-    </ClCompile>
     <ClCompile Include="source\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\Window.cpp">
+    <ClCompile Include="source\WinAPI.cpp">
       <Filter>Source Files\winAPI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\Application.h">
-      <Filter>Source Files\winAPI</Filter>
-    </ClInclude>
     <ClInclude Include="source\main.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="source\Window.h">
+    <ClInclude Include="source\WinAPI.h">
       <Filter>Source Files\winAPI</Filter>
     </ClInclude>
   </ItemGroup>
