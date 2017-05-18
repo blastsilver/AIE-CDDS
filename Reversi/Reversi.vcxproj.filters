@@ -5,24 +5,42 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Source Files\winAPI">
+    <Filter Include="Source Files\fuse">
       <UniqueIdentifier>{3f03264c-d317-4f27-aea5-717c50fc7703}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\fuse\api">
+      <UniqueIdentifier>{f1cc63e9-0f99-4ba6-9715-b17817e4cd7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\fuse\api\window">
+      <UniqueIdentifier>{6372d80c-1df9-4f04-ad1c-d611add2436b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\WinAPI.cpp">
-      <Filter>Source Files\winAPI</Filter>
+    <ClCompile Include="source\fuse.cpp">
+      <Filter>Source Files\fuse</Filter>
+    </ClCompile>
+    <ClCompile Include="source\fuse-win-windows.cpp">
+      <Filter>Source Files\fuse\api\window</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\main.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="source\WinAPI.h">
-      <Filter>Source Files\winAPI</Filter>
+    <ClInclude Include="source\fuse.h">
+      <Filter>Source Files\fuse</Filter>
+    </ClInclude>
+    <ClInclude Include="source\fuse-window.h">
+      <Filter>Source Files\fuse\api\window</Filter>
+    </ClInclude>
+    <ClInclude Include="source\fuse-core.h">
+      <Filter>Source Files\fuse\api</Filter>
+    </ClInclude>
+    <ClInclude Include="source\fuse-win-windows.h">
+      <Filter>Source Files\fuse\api\window</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
