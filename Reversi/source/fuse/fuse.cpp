@@ -13,7 +13,7 @@
     }
     void fuseCloseWindow(FUSEwindow * window)
     {
-        // Fuse :: stop the window
+        // Fuse :: close the window
         _fuseAPIWindowClose(window);
     }
     void fuseUpdateWindow(FUSEwindow * window)
