@@ -12,9 +12,14 @@ using namespace Gdiplus;
 
 namespace Reversi
 {
+    void GameEnd();
+    void GameInit(HWND hwnd, HDC hdc);
     void GameStart();
     void GamePaint(Graphics * graphics);
-    void GamePutPiece(int x, int y);
-    void GameCalculate();
-    void GameCalculate(int x, int y, int dx, int dy);
+    void GamePopulate();
+    void GamePopulate(int x, int y, int dx, int dy);
+    bool GameCalculate();
+    void GameCalculate(int x, int y, int dx, int dy, int id);
+    void GameEventMouseMove(int x, int y);
+    void GameEventMouseClick();
 }

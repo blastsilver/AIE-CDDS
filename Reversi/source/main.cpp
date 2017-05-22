@@ -83,65 +83,97 @@ namespace Reversi
         // draw the player
         if (game_x < 0 || game_x > 9) return;
         if (game_y < 0 || game_y > 9) return;
-        if (game_check[game_x][game_y] != game_player) return;
-        graphics->FillEllipse(&brush3, game_x*REVERSI_SIZEX+2, game_y*REVERSI_SIZEX+2, 21, 21);
+        if (game_check[game_x][game_y] == 0) return;
+        graphics->FillEllipse(&brush3, game_x*REVERSI_SIZEX+2, game_y*REVERSI_SIZEX+2, REVERSI_SIZEX-4, REVERSI_SIZEY-4);
 
-        RECT rect = { 1, 1, 49, 24 };
-        std::string str = std::to_string(game_x) + "," + std::to_string(game_y);
-        DrawText(graphics->GetHDC(), str.c_str(), str.size(), &rect, DT_LEFT);
-
-
-
+        //RECT rect = { 1, 1, 49, 24 };
+        //std::string str = std::to_string(game_x) + "," + std::to_string(game_y);
+        //DrawText(graphics->GetHDC(), str.c_str(), str.size(), &rect, DT_LEFT);
     }
-    void GamePutPiece(int x, int y)
+    void GamePopulate()
     {
-        
+        int value = game_check[game_x][game_y];
+        // populate positives
+        if ((value | 0x10000000) == value) GamePopulate(game_x, game_y, 1, 0);
+        if ((value | 0x01000000) == value) GamePopulate(game_x, game_y, 0, 1);
+        if ((value | 0x00100000) == value) GamePopulate(game_x, game_y, 1, 1);
+        // populate negatives
+        if ((value | 0x00010000) == value) GamePopulate(game_x, game_y,-1, 0);
+        if ((value | 0x00001000) == value) GamePopulate(game_x, game_y, 0,-1);
+        if ((value | 0x00000100) == value) GamePopulate(game_x, game_y,-1,-1);
+        // pupulate mixed values
+        if ((value | 0x00000010) == value) GamePopulate(game_x, game_y,-1, 1);
+        if ((value | 0x00000001) == value) GamePopulate(game_x, game_y, 1,-1);
     }
-    void GameCalculate()
+    void GamePopulate(int x, int y, int dx, int dy)
     {
+        int tx = x, ty = y;
+        // go throught deltas
+        while (true)
+        {
+            // add deltas
+            tx += dx, ty += dy;
+            // check if in-bounds
+            if (tx < 0 || tx > 9) break;
+            if (ty < 0 || ty > 9) break;
+            // check if wrong values
+            if (game_board[tx][ty] == 0) break;
+            if (game_board[tx][ty] == game_player) break;
+            // populate new player value
+            game_board[tx][ty] = game_player;
+        }
+    }
+    bool GameCalculate()
+    {
+        bool check = false;
         for (int y = 0; y < 10; y++)
         {
             for (int x = 0; x < 10; x++)
             {
                 game_check[x][y] = 0;
-                // calculate positives
-                GameCalculate(x, y, 1, 0);
-                GameCalculate(x, y, 0, 1);
-                GameCalculate(x, y, 1, 1);
-                // calculate negatives
-                GameCalculate(x, y,-1, 0);
-                GameCalculate(x, y, 0,-1);
-                GameCalculate(x, y,-1,-1);
+                // check if empty
+                if (game_board[x][y] == 0)
+                {
+                    // calculate positives
+                    GameCalculate(x, y, 1, 0, 0x10000000);
+                    GameCalculate(x, y, 0, 1, 0x01000000);
+                    GameCalculate(x, y, 1, 1, 0x00100000);
+                    // calculate negatives
+                    GameCalculate(x, y,-1, 0, 0x00010000);
+                    GameCalculate(x, y, 0,-1, 0x00001000);
+                    GameCalculate(x, y,-1,-1, 0x00000100);
+                    // calculate mixed values
+                    GameCalculate(x, y,-1, 1, 0x00000010);
+                    GameCalculate(x, y, 1,-1, 0x00000001);
+                }
+                // check for change
+                if (game_check[x][y] != 0) check = true;
             }
         }
+        // return the check
+        return check;
     }
-    void GameCalculate(int x, int y, int dx, int dy)
+    void GameCalculate(int x, int y, int dx, int dy, int id)
     {
-        int tx = x, ty = y;
-        int value = game_board[tx][ty];
-        // check if possible
-        if (value == 0 && game_board[tx + dx][ty + dy] != 0 && game_board[tx + dx][ty + dy] != game_player)
+        int tx = x + dx, ty = y + dy;
+        // check if valid
+        if (game_board[tx][ty] + game_player == 3)
         {
-            tx += dx, ty += dy;
-            // go through line deltas
+            // go throught deltas
             while (true)
             {
                 // add deltas
                 tx += dx, ty += dy;
-                // check bounds
+                // check if in-bounds
                 if (tx < 0 || tx > 9) break;
                 if (ty < 0 || ty > 9) break;
-                // get the value
-                value = game_board[tx][ty];
-                // check for 0's
-                if (value == 0) break;
-                // check for opposite player
-                if (value == game_player)
+                // check if wrong values
+                if (game_board[tx][ty] == game_player)
                 {
-                    // add to the check table
-                    game_check[x][y] = game_player;
+                    game_check[x][y] |= id;
                     break;
                 }
+                if (game_board[tx][ty] == 0) break;
             }
         }
     }
@@ -151,9 +183,39 @@ namespace Reversi
         game_x = int(float(x) / float(REVERSI_SIZEX));
         game_y = int(float(y) / float(REVERSI_SIZEY));
     }
-    void GameEventMouseState(int key, int state)
+    void GameEventMouseClick()
     {
-
+        // check if valid
+        if (game_check[game_x][game_y] == 0) return;
+        // position new pebble
+        GamePopulate();
+        game_player = game_player % 2 + 1;
+        game_board[game_x][game_y] = 3 - game_player;
+        if (!GameCalculate()) game_player = game_player % 2 + 1;
+        // calculate player points
+        int points[2] = { 0, 0 };
+        for (int y = 0; y < 10; y++)
+        {
+            for (int x = 0; x < 10; x++)
+            {
+                // add points up
+                points[game_board[x][y] - 1]++;
+            }
+        }
+        // check if complete
+        char * message;
+        bool gameover = true;
+        if (points[0] == 0) message = "Player 1 Won!";
+        else if (points[1] == 0) message = "Player 2 Won!";
+        else if (points[0] + points[1] == 100) message = points[0] > points[1] ? "Player 1 Won!" : "Player 2 Won!";
+        else gameover = false;
+        // check if gameover
+        if (gameover)
+        {
+            // start a new game
+            MessageBox(NULL, message, MB_OK, MB_ICONINFORMATION);
+            GameStart();
+        }
     }
 }
 
@@ -204,6 +266,11 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
             break;
         }
         // events
+        case WM_LBUTTONUP:
+            Reversi::GameEventMouseClick();
+            InvalidateRect(hwnd, NULL, FALSE);
+            UpdateWindow(hwnd);
+            break;
         case WM_MOUSEMOVE:
         {
             Reversi::GameEventMouseMove(LOWORD(lParam), HIWORD(lParam));
