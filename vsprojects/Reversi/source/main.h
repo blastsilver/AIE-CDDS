@@ -1,9 +1,9 @@
 #pragma once
 
 #include <string>
-#include <Windows.h>
 #include <objidl.h>
 #include <gdiplus.h>
+#include <Windows.h>
 using namespace Gdiplus;
 #pragma comment (lib,"Gdiplus.lib")
 

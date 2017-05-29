@@ -5,15 +5,42 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="Source Files\Reversi">
+      <UniqueIdentifier>{a1bcba0b-b98c-462c-8bce-d713709a7628}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Reversi\StateManager">
+      <UniqueIdentifier>{fac3bf76-463a-405b-86a9-1f01e859211b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Reversi\GameManager">
+      <UniqueIdentifier>{5d6a3d69-0573-48c8-a85f-7ef09718254a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Reversi\StateManager\states">
+      <UniqueIdentifier>{cc7bc038-874c-4573-915e-8e223dad39fb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\StateManager.cpp">
+      <Filter>Source Files\Reversi\StateManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\main.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\GameManager.h">
+      <Filter>Source Files\Reversi\GameManager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\State.h">
+      <Filter>Source Files\Reversi\StateManager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\StateManager.h">
+      <Filter>Source Files\Reversi\StateManager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Reversi.h">
+      <Filter>Source Files\Reversi</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
