@@ -23,7 +23,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\List.h" />
+<<<<<<< HEAD
     <ClInclude Include="source\Map.h" />
+=======
+>>>>>>> Tutorials
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{41327417-FCF8-4B8E-9E5D-2AEDE72233A0}</ProjectGuid>

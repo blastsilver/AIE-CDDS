@@ -15,8 +15,11 @@
     <ClInclude Include="source\List.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="source\Map.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+=======
+>>>>>>> Tutorials
   </ItemGroup>
 </Project>
