@@ -5,20 +5,39 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="Source Files\old">
+      <UniqueIdentifier>{c880f697-6ec1-4bea-a0ca-276c458ef530}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\draw">
+      <UniqueIdentifier>{65828e10-5158-4c5c-a7cd-149f5b027916}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="source\CGraphics-core.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\old</Filter>
+    </ClCompile>
+    <ClCompile Include="source\draw-core.cpp">
+      <Filter>Source Files\draw</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\List.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="source\CGraphics.h" />
-    <ClInclude Include="source\CGraphics-core.h" />
+    <ClInclude Include="source\CGraphics.h">
+      <Filter>Source Files\old</Filter>
+    </ClInclude>
+    <ClInclude Include="source\CGraphics-core.h">
+      <Filter>Source Files\old</Filter>
+    </ClInclude>
+    <ClInclude Include="source\draw.h">
+      <Filter>Source Files\draw</Filter>
+    </ClInclude>
+    <ClInclude Include="source\draw-core.h">
+      <Filter>Source Files\draw</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

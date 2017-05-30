@@ -100,6 +100,8 @@ void drawTriangle(CGraphics * graphics, vec2 & v1, vec2 & v2, vec2 & v3)
     }
 }
 
+#include "draw.h"
+
 void main()
 {
     ccon::cconInit();
@@ -108,27 +110,25 @@ void main()
     CGraphics graphics(SIZE, SIZE);
 
 
+    graphics.mode(CGraphics::LINES);
+    graphics.clear(CGraphics::DEPTH_BUFFER | CGraphics::COLOUR_BUFFER);
+    drawTriangle(&graphics, vec2{ 10, 5 }, vec2{ 60, 0 }, vec2{ 0, 60 });
+    graphics.draw();
+
 
     while (ccon::cconRunning())
     {
-        graphics.clear(CGraphics::DEPTH_BUFFER | CGraphics::COLOUR_BUFFER);
+        draw::drawBegin();
 
-        graphics.mode(CGraphics::LINES);
-        graphics.vertex(0.0f, 0.0f);
-        graphics.vertex(1.0f, 1.0f);
+        draw::drawMode(draw::DRAW_LINES);
 
-        graphics.vertex(0.0f, 0.0f);
-        graphics.vertex(0.2f, 0.5f);
+        draw::drawVertex(-1,-1);
+        draw::drawVertex( 1, 1);
 
-        graphics.vertex(0.0f, 0.0f);
-        graphics.vertex(0.5f, 0.2f);
+        draw::drawVertex( 1,-1);
+        draw::drawVertex(-1, 1);
 
-        drawTriangle(&graphics, vec2{ 10, 5 }, vec2{ 60, 0 }, vec2{ 0, 60 });
-        //fillBottomFlatTriangle(&graphics, vec2{ 80,0 }, vec2{ 80,80 }, vec2{ 0,80 });
-
-        //fillTopFlatTriangle(&graphics, vec2{ 80,-1 }, vec2{ -1,-1 }, vec2{ -1,80 });
-
-        graphics.draw();
+        draw::drawEnd();
     }
 
     ccon::cconTerminate();
