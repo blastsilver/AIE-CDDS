@@ -39,5 +39,8 @@
     <ClInclude Include="source\draw-core.h">
       <Filter>Source Files\draw</Filter>
     </ClInclude>
+    <ClInclude Include="Tutorials.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

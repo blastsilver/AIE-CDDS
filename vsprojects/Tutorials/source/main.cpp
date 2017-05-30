@@ -104,50 +104,52 @@ void drawTriangle(CGraphics * graphics, vec2 & v1, vec2 & v2, vec2 & v3)
 
 void main()
 {
-    ccon::cconInit();
-    ccon::cconSize(SIZE, SIZE);
-    ccon::cconViewport(0, 0, SIZE, SIZE);
-    CGraphics graphics(SIZE, SIZE);
+    //ccon::cconInit();
+    //ccon::cconSize(SIZE, SIZE);
+    //ccon::cconViewport(0, 0, SIZE, SIZE);
+    //CGraphics graphics(SIZE, SIZE);
 
 
-    graphics.mode(CGraphics::LINES);
-    graphics.clear(CGraphics::DEPTH_BUFFER | CGraphics::COLOUR_BUFFER);
-    drawTriangle(&graphics, vec2{ 10, 5 }, vec2{ 60, 0 }, vec2{ 0, 60 });
-    graphics.draw();
+    //graphics.mode(CGraphics::LINES);
+    //graphics.clear(CGraphics::DEPTH_BUFFER | CGraphics::COLOUR_BUFFER);
+    //drawTriangle(&graphics, vec2{ 10, 5 }, vec2{ 60, 0 }, vec2{ 0, 60 });
+    //graphics.draw();
 
 
-    while (ccon::cconRunning())
+    //while (ccon::cconRunning())
+    //{
+    //    //draw::drawBegin();
+
+    //    //draw::drawMode(draw::DRAW_LINES);
+
+    //    //draw::drawVertex(-1,-1);
+    //    //draw::drawVertex( 1, 1);
+
+    //    //draw::drawVertex( 1,-1);
+    //    //draw::drawVertex(-1, 1);
+
+    //    //draw::drawEnd();
+    //}
+
+    //ccon::cconTerminate();
+
+    List<int> list;
+
+    for (int i = 0; i < 50; i++)
     {
-        draw::drawBegin();
-
-        draw::drawMode(draw::DRAW_LINES);
-
-        draw::drawVertex(-1,-1);
-        draw::drawVertex( 1, 1);
-
-        draw::drawVertex( 1,-1);
-        draw::drawVertex(-1, 1);
-
-        draw::drawEnd();
+        list.pushBack(i);
+        //list.pushFront(i);
+    }
+    for (int i = 0; i < 20; i++)
+    {
+        list.popBack();
+        list.popFront();
     }
 
-    ccon::cconTerminate();
+    for (List<int>::Node * i = list.first(); i != list.end(); i = i->next)
+    {
+        std::cout << i->value << ",";
+    }
 
-    //List<int> list;
-
-    //for (int i = 0; i < 10; i++)
-    //{
-    //    list.pushBack(i);
-    //    //list.pushFront(i);
-    //}
-    //for (int i = 0; i < 5; i++)
-    //{
-    //    list.popBack();
-    //    list.popFront();
-    //}
-
-    //for (List<int>::Node * i = list.first(); i != list.end(); i = i->next)
-    //{
-    //    std::cout << i->value << ",";
-    //}
+	system("pause");
 }

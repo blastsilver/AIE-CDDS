@@ -8,10 +8,13 @@ template<typename T> class List
 {
 public:
     struct Node { T value; Node *prev, *next; };
-
+	// constructor
     List() { this->_init(); };
+	// destructor
     ~List() { this->clear(); }
+	// copy constructor
     List(const List & other) { this->_init(); this->_copy(other) };
+	// assigment operator
     void operator=(const List & other) { this->_copy(other) };
 
     // check if empty
