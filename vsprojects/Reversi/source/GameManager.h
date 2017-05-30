@@ -1,36 +1,72 @@
 #pragma once
 //-- Declarations ----------------------------------------------------------------------------------
 
-    enum class GameMessage
+    enum class GameState
     {
         None,       // no message
         Player1,    // the player 1
         Player2,    // the player 2
-        Restart,    // the game needs to restart
-        GameOver,   // when the game has finished
-        NextPlayer, // when player finished his move
-        KeepPlayer, // when next player has no moves
+        GameOver,   // the game has finished
+        NextPlayer, // the player has finished playing
+        KeepPlayer, // the player has not finished playing
     };
+
 
     class GameManager
     {
     public:
+        // constructor
         GameManager();
-        ~GameManager();
-        int Score(GameMessage message);
-        GameMessage Play(int x, int y);
-
-
-        //void GameEnd();
-        //void GameInit(HWND hwnd, HDC hdc);
-        //void GameStart();
-        //void GamePaint(Graphics * graphics);
-        //void GamePopulate();
-        //void GamePopulate(int x, int y, int dx, int dy);
-        //bool GameCalculate();
-        //void GameCalculate(int x, int y, int dx, int dy, int id);
-        //void GameEventMouseMove(int x, int y);
-        //void GameEventMouseClick();
+        // WindowProcedure :: called on paint
+        void OnPaint();
+        // WindowProcedure :: called on create
+        void OnCreate(HWND hwnd);
+        // WindowProcedure :: called on destroy
+        void OnDestroy();
+        // WindowProcedure :: called on mouse move
+        void OnMouseMove(int x, int y);
+        // WindowProcedure :: called on mouse click
+        void OnMouseClick(int x, int y);
+        // get current game state;
+        GameState GetState();
+    private:
+        // structs
+        struct _WinGraphics
+        {
+            HDC hdc;
+            HBITMAP bmp;
+            Gdiplus::Pen pen;
+            Gdiplus::Graphics * graphics;
+            Gdiplus::SolidBrush SolidBrush1;
+            Gdiplus::SolidBrush SolidBrush2;
+            Gdiplus::SolidBrush SolidBrush3;
+        };
+        struct _Reversi
+        {
+            int player;
+            int x, y, size;
+            GameState state;
+            int board1[10][10];
+            int board2[10][10];
+        };
+        // methods :: game
+        void _game_draw();
+        void _game_play(int x, int y);
+        void _game_update(int x, int y);
+        void _game_initiate();
+        // methods :: paint
+        void _paint_end();
+        void _paint_begin();
+        void _paint_initiate(HWND hwnd);
+        void _paint_terminate();
+        void _paint_graphicsLine(int x, int y, int dx, int dy, Gdiplus::Color color);
+        void _paint_graphicsEllipse(int x, int y, Gdiplus::Color color);
+        // variables
+        _Reversi reversi;
+        _WinGraphics window;
+        StateManager stateManager;
+        const int PLAYER1 = 1;
+        const int PLAYER2 = 2;
     };
 
 //--------------------------------------------------------------------------------------------------

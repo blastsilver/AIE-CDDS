@@ -1,6 +1,7 @@
 #pragma once
 //-- Dependencies ----------------------------------------------------------------------------------
 
+    // library
     #include <string>
     #include <objidl.h>
     #include <gdiplus.h>
@@ -8,10 +9,10 @@
     using namespace Gdiplus;
     #pragma comment (lib,"Gdiplus.lib")
 
+    // project
     #include "State.h"
-    #include "GameManager.h"
     #include "StateManager.h"
-    #include "StateClasses.h"
+    #include "GameManager.h"
 
 //-- Declarations ----------------------------------------------------------------------------------
 

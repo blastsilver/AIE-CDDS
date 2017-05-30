@@ -14,8 +14,8 @@
     <Filter Include="Source Files\Reversi\GameManager">
       <UniqueIdentifier>{5d6a3d69-0573-48c8-a85f-7ef09718254a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Reversi\StateManager\states">
-      <UniqueIdentifier>{cc7bc038-874c-4573-915e-8e223dad39fb}</UniqueIdentifier>
+    <Filter Include="Source Files\Reversi\GameManager\states">
+      <UniqueIdentifier>{fd39bad9-1100-465b-8b7b-73b537b54390}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -24,6 +24,12 @@
     </ClCompile>
     <ClCompile Include="source\StateManager.cpp">
       <Filter>Source Files\Reversi\StateManager</Filter>
+    </ClCompile>
+    <ClCompile Include="source\states.cpp">
+      <Filter>Source Files\Reversi\GameManager\states</Filter>
+    </ClCompile>
+    <ClCompile Include="source\GameManager.cpp">
+      <Filter>Source Files\Reversi\GameManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -41,6 +47,21 @@
     </ClInclude>
     <ClInclude Include="source\Reversi.h">
       <Filter>Source Files\Reversi</Filter>
+    </ClInclude>
+    <ClInclude Include="source\PVPstate.h">
+      <Filter>Source Files\Reversi\GameManager\states</Filter>
+    </ClInclude>
+    <ClInclude Include="source\MENUstate.h">
+      <Filter>Source Files\Reversi\GameManager\states</Filter>
+    </ClInclude>
+    <ClInclude Include="source\PAUSEstate.h">
+      <Filter>Source Files\Reversi\GameManager\states</Filter>
+    </ClInclude>
+    <ClInclude Include="source\P1WONstate.h">
+      <Filter>Source Files\Reversi\GameManager\states</Filter>
+    </ClInclude>
+    <ClInclude Include="source\P2WONstate.h">
+      <Filter>Source Files\Reversi\GameManager\states</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

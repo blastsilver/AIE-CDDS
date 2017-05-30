@@ -1,18 +1,6 @@
 #pragma once
 //-- Declarations ----------------------------------------------------------------------------------
 
-    enum States
-    {
-        // states
-        PvEState,
-        PvPState,
-        EvEState,
-        MenuState,
-        PauseState,
-        // default
-        EmptyState,
-    };
-
     class State
     {
     public:
@@ -24,6 +12,11 @@
         virtual void OnKeyState(int key, bool pressed) {};
         virtual void OnMouseMove(int mouseX, int mouseY) {};
         virtual void OnMouseState(int key, bool pressed) {};
+    };
+
+    enum class States
+    {
+        NONE, PVP, MENU, P1WON, P2WON, PAUSE,
     };
 
 //--------------------------------------------------------------------------------------------------

@@ -10,10 +10,15 @@
     <ClCompile Include="source\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\CGraphics-core.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\List.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="source\CGraphics.h" />
+    <ClInclude Include="source\CGraphics-core.h" />
   </ItemGroup>
 </Project>

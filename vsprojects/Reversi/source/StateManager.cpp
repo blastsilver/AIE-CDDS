@@ -21,6 +21,8 @@
     }
     void StateManager::SetState(States state)
     {
+        throw "ERROR";
+
         if (this->currentState != nullptr)
         {
             this->currentState->OnEnd();
@@ -28,21 +30,10 @@
             this->currentState = nullptr;
         }
 
-        switch (state)
-        {
-            case States::Menu:
-                this->currentState = new MenuState();
-                break;
-            case States::Finish:
-                this->currentState = new MenuState();
-                break;
-            case States::Player1:
-                this->currentState = new MenuState();
-                break;
-            case States::Player2:
-                this->currentState = new MenuState();
-                break;
-        }
+        //switch (state)
+        //{
+        //    
+        //}
 
         this->currentState->OnBegin();
     }

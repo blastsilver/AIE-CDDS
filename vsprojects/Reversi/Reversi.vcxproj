@@ -19,12 +19,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\GameManager.cpp" />
     <ClCompile Include="source\main.cpp" />
     <ClCompile Include="source\StateManager.cpp" />
+    <ClCompile Include="source\states.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\GameManager.h" />
     <ClInclude Include="source\main.h" />
+    <ClInclude Include="source\MENUstate.h" />
+    <ClInclude Include="source\P1WONstate.h" />
+    <ClInclude Include="source\P2WONstate.h" />
+    <ClInclude Include="source\PAUSEstate.h" />
+    <ClInclude Include="source\PVPstate.h" />
     <ClInclude Include="source\Reversi.h" />
     <ClInclude Include="source\State.h" />
     <ClInclude Include="source\StateManager.h" />
