@@ -4,8 +4,7 @@
 #include <Windows.h>
 #include <CCON\ccon.h>
 #include "CGraphics.h"
-
-#include "List.h"
+#include "Tutorials.h"
 
 #define SIZE 81
 
@@ -55,7 +54,6 @@ void fillBottomFlatTriangle(CGraphics * graphics, vec2 & v1, vec2 & v2, vec2 & v
         curx2 += invslope2;
     }
 }
-
 void swapVertices(vec2 * v1, vec2 * v2)
 {
     vec2 temp = { v1->x, v1->y };
@@ -64,7 +62,6 @@ void swapVertices(vec2 * v1, vec2 * v2)
     v2->x = temp.x;
     v2->y = temp.y;
 }
-
 void sortVerticesAscendingByY(vec2 * v1, vec2 * v2, vec2 * v3)
 {
     if (v1->y < v2->y) swapVertices(v1, v2);
@@ -72,7 +69,6 @@ void sortVerticesAscendingByY(vec2 * v1, vec2 * v2, vec2 * v3)
     if (v2->y < v3->y) swapVertices(v2, v3);
     if (v3->y < v1->y) swapVertices(v3, v1);
 }
-
 void drawTriangle(CGraphics * graphics, vec2 & v1, vec2 & v2, vec2 & v3)
 {
     /* at first sort the three vertices by y-coordinate ascending so v1 is the topmost vertice */
@@ -100,7 +96,6 @@ void drawTriangle(CGraphics * graphics, vec2 & v1, vec2 & v2, vec2 & v3)
     }
 }
 
-#include "draw.h"
 
 void main()
 {
@@ -108,48 +103,35 @@ void main()
     //ccon::cconSize(SIZE, SIZE);
     //ccon::cconViewport(0, 0, SIZE, SIZE);
     //CGraphics graphics(SIZE, SIZE);
-
-
     //graphics.mode(CGraphics::LINES);
     //graphics.clear(CGraphics::DEPTH_BUFFER | CGraphics::COLOUR_BUFFER);
     //drawTriangle(&graphics, vec2{ 10, 5 }, vec2{ 60, 0 }, vec2{ 0, 60 });
     //graphics.draw();
-
-
-    //while (ccon::cconRunning())
-    //{
-    //    //draw::drawBegin();
-
-    //    //draw::drawMode(draw::DRAW_LINES);
-
-    //    //draw::drawVertex(-1,-1);
-    //    //draw::drawVertex( 1, 1);
-
-    //    //draw::drawVertex( 1,-1);
-    //    //draw::drawVertex(-1, 1);
-
-    //    //draw::drawEnd();
-    //}
-
+    //while (ccon::cconRunning());
     //ccon::cconTerminate();
 
-    List<int> list;
+    int size = 40;
 
-    for (int i = 0; i < 50; i++)
-    {
-        list.pushBack(i);
-        //list.pushFront(i);
-    }
-    for (int i = 0; i < 20; i++)
-    {
-        list.popBack();
-        list.popFront();
-    }
+    LinkedList<int> list1;
+    LinkedList<int> list2;
 
-    for (List<int>::Node * i = list.first(); i != list.end(); i = i->next)
+    for (int i = 0; i < 5; i++)
     {
-        std::cout << i->value << ",";
+        list1.pushBack(i);
+        list1.pushFront(i);
     }
+    list2 = list1;
 
-	system("pause");
+    std::cout << "--[ List 1 ]----------------------------\n - ";
+    for (Node<int> * i = list1.first(); i != list1.end(); i = i->next)
+        std::cout << i->value << (char)((i->next == nullptr) ? '\n' : ',');
+
+    std::cout << "--[ List 1 ]----------------------------\n - ";
+    for (Node<int> * i = list2.first(); i != list2.end(); i = i->next)
+        std::cout << i->value << (char)((i->next == nullptr) ? '\n' : ',');
+    std::cout << "----------------------------------------\n";
+
+    std::cout << "\n";
+
+    while (true);
 }

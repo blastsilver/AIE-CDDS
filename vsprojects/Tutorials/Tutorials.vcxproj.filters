@@ -24,9 +24,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\List.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="source\CGraphics.h">
       <Filter>Source Files\old</Filter>
     </ClInclude>
@@ -39,7 +36,7 @@
     <ClInclude Include="source\draw-core.h">
       <Filter>Source Files\draw</Filter>
     </ClInclude>
-    <ClInclude Include="Tutorials.h">
+    <ClInclude Include="source\Tutorials.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
