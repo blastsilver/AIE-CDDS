@@ -1,89 +1,8 @@
-//#define SIZE 81
-
-#include <iostream>
-#include <Windows.h>
-<<<<<<< HEAD
-#include "tutorials.h"
-
-typedef tutorials::Node<int> Node_i;
-typedef tutorials::List<int> List_i;
-typedef tutorials::Tree<int> Tree_i;
-
-void gotoxy(int x, int y)
-{
-	COORD p = { x, y };
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), p);
-}
-
-void print_node(const Node_i * node, int x, int y, int space)
-{
-	//int n = x < 0 ? (-x * 2);
-}
-
-void print_tree(const Node_i * node, int min, int max, bool isLast)
-{
-	// print the node
-	for (int i = 0; i < min; i++) std::cout << '-';
-	// check if empty
-	if (node != nullptr)
-	{
-		std::cout << node->value;
-		// check for next
-		if (node->next != nullptr)
-		{
-			if (isLast) std::cout << '\n';
-			// print next node
-			int middMin = max + max - min;
-			int halfMin = int(float(min) / 2.0f);
-			print_tree(node->prev, halfMin, max, false);
-			print_tree(node->next, middMin, max, isLast);
-		}
-	}
-	else std::cout << '#';
-}
-void print_list(const Node_i * node)
-{
-	// check if empty
-	if (node == nullptr) return;
-	// print the node
-	std::cout << node->value;
-	// check for next
-	if (node->next == nullptr) std::cout << '\n';
-	else
-	{
-		std::cout << ',';
-		// print next node
-		print_list(node->next);
-	}
-}
-
-void main()
-{
-	Tree_i tree;
-
-	tree.insert(7);
-
-	tree.insert(3);
-
-	tree.insert(1);
-	tree.insert(0);
-	tree.insert(2);
-
-	tree.insert(5);
-	tree.insert(4);
-	tree.insert(6);
-
-
-	//printNode_list(list.head());
-	//print_tree(tree.root(), 10, 10, true);
-
-	std::cout << "\n";
-
-	system("pause");
-}
-
+//#pragma once
+//
 //struct vec2 { float x, y; };
 //struct vec4 { float x, y, z, w; };
+//
 //float worldToScreen(int n)
 //{
 //    float halfSize = (float(SIZE) - 1.0) / 2.0f;
@@ -116,7 +35,7 @@ void main()
 //    float curx1 = v1.x;
 //    float curx2 = v1.x;
 //
-//    for (int scanlineY = v1.y; scanlineY < v2.y; scanlineY++)
+//    for (int scanlineY = v1.y; scanlineY <= v2.y; scanlineY++)
 //    {
 //        graphics->colour(worldToScreen(curx1) / 2.0f + 1.0f, worldToScreen(scanlineY) / 2.0f + 1.0f, 0);
 //        graphics->vertex(worldToScreen(curx1), -worldToScreen(scanlineY));
@@ -168,24 +87,3 @@ void main()
 //        fillTopFlatTriangle(graphics, v2, v4, v3);
 //    }
 //}
-=======
-#include <CCON\ccon.h>
-#include "CGraphics.h"
-#include "TutorialsBK.h"
-
-void main()
-{
-    Tree<int> tree;
-
-    tree.insert(1);
-    tree.insert(2);
-    tree.insert(3); // sort
-    tree.insert(4);
-    tree.insert(5);
-    tree.insert(6);
-    
-
-    std::cout << "GoodBye \n";
-
-}
->>>>>>> FUUUUUUUUUUUUU
