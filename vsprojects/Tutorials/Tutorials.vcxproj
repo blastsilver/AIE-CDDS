@@ -26,6 +26,7 @@
     <ClInclude Include="source\tutorials-node.h" />
     <ClInclude Include="source\tutorials.h" />
     <ClInclude Include="source\tutorials-tree.h" />
+    <ClInclude Include="source\TutorialsBK.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{41327417-FCF8-4B8E-9E5D-2AEDE72233A0}</ProjectGuid>
