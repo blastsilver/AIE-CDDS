@@ -8,11 +8,14 @@
     <Filter Include="Source Files\old">
       <UniqueIdentifier>{c880f697-6ec1-4bea-a0ca-276c458ef530}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\draw">
-      <UniqueIdentifier>{65828e10-5158-4c5c-a7cd-149f5b027916}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Tutorials">
       <UniqueIdentifier>{97bb9d7a-501a-4ffe-8a09-caa3ea11c663}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Tutorials\structures">
+      <UniqueIdentifier>{6f8c730c-44f7-4919-ad2c-563bae2e7fe5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Tutorials\classes">
+      <UniqueIdentifier>{0293488f-8d29-497d-bbc8-5a615735221b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -24,17 +27,23 @@
     <ClInclude Include="source\tutorials.h">
       <Filter>Source Files\Tutorials</Filter>
     </ClInclude>
-    <ClInclude Include="source\tutorials-list.h">
-      <Filter>Source Files\Tutorials</Filter>
-    </ClInclude>
-    <ClInclude Include="source\tutorials-node.h">
-      <Filter>Source Files\Tutorials</Filter>
-    </ClInclude>
-    <ClInclude Include="source\tutorials-tree.h">
-      <Filter>Source Files\Tutorials</Filter>
-    </ClInclude>
     <ClInclude Include="source\TutorialsBK.h">
       <Filter>Source Files\old</Filter>
+    </ClInclude>
+    <ClInclude Include="source\tutorials-node.h">
+      <Filter>Source Files\Tutorials\classes</Filter>
+    </ClInclude>
+    <ClInclude Include="source\tutorials-aatree.h">
+      <Filter>Source Files\Tutorials\structures</Filter>
+    </ClInclude>
+    <ClInclude Include="source\tutorials-hashmap.h">
+      <Filter>Source Files\Tutorials\structures</Filter>
+    </ClInclude>
+    <ClInclude Include="source\tutorials-linkedlist.h">
+      <Filter>Source Files\Tutorials\structures</Filter>
+    </ClInclude>
+    <ClInclude Include="source\tutorials-hashpair.h">
+      <Filter>Source Files\Tutorials\classes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

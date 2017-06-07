@@ -320,16 +320,16 @@ AATree<Comparable>::clone(AANode<Comparable> * t) const
 template<typename T> struct Node {
     T value;
     int level;
-    Node * prev;
-    Node * next;
+    Node * left;
+    Node * right;
 
     Node() : Node(0, nullptr., nullptr, 0) {};
     Node(T value) : Node(value, nullptr, nullptr, 0) {};
     Node(T value, int level) : Node(value, nullptr, nullptr, level) {};
-    Node(T value, Node * prev, Node * next, int level)
+    Node(T value, Node * left, Node * right, int level)
     {
-        this->prev = prev;
-        this->next = next;
+        this->left = left;
+        this->right = right;
         this->level = level;
         this->value = value;
     }
@@ -368,8 +368,8 @@ private:
         if (other == nullptr) return nullptr;
         // create node copy
         Node<T> * temp = new Node<T>(other->value);
-        temp->next = this->_copy(other->next);
-        temp->prev = this->_copy(other->prev);
+        temp->right = this->_copy(other->right);
+        temp->left = this->_copy(other->left);
         // return node
         return temp;
     }
@@ -381,12 +381,12 @@ private:
         if (value > node->value)
         {
             // insert on the right branch
-            node->next = this->_insert(node->next, value);
+            node->right = this->_insert(node->right, value);
         }
         else
         {
             // insert on the left branch
-            node->prev = this->_insert(node->prev, value);
+            node->left = this->_insert(node->left, value);
         }
         // return the node
         return node;
@@ -396,11 +396,11 @@ private:
     {
         // temporary values
         Node<T> * temp1 = node;
-        Node<T> * temp2 = temp1->next;
-        Node<T> * temp3 = temp2->next;
+        Node<T> * temp2 = temp1->right;
+        Node<T> * temp3 = temp2->right;
         // rotate between temp1 and temp2
-        temp1->next = temp2.prev;
-        temp2->prev = temp1;
+        temp1->right = temp2.left;
+        temp2->left = temp1;
 
         // temp3 = black
 
@@ -411,10 +411,10 @@ private:
     {
         // temporary values
         Node<T> * temp1 = node;
-        Node<T> * temp2 = node->prev;
+        Node<T> * temp2 = node->left;
         // rotate between temp1 and temp2
-        temp1->prev = temp2.next;
-        temp2->next = temp1;
+        temp1->left = temp2.right;
+        temp2->right = temp1;
 
         // temp1 = red
         // temp2 = black
