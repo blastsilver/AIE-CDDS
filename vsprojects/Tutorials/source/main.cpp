@@ -1,55 +1,35 @@
 //#define SIZE 81
 
+#include "util.h"
+
 #include <map>
+#include <vector>
 #include <iostream>
 #include <Windows.h>
-#include "tutorials.h"
 
-typedef tutorials::Node<int> Node_i;
-typedef tutorials::List<int> List_i;
-typedef tutorials::AATree<int> Tree_i;
-//typedef tutorials::HashMap<int> Hash_i;
+using namespace tutorials;
 
 void gotoxy(int x, int y)
 {
-	COORD p = { x, y };
+	COORD p = { (SHORT)x, (SHORT)y };
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), p);
-}
-
-void printTree(Node_i * node, Node_i * null, int x)
-{
-    if (node != null)
-    {
-        gotoxy(x, node->level);
-        std::cout << "[" << node->value << "]";
-        printTree(node->left, null, x - 5);
-        printTree(node->right, null, x + 5);
-    }
 }
 
 void main()
 {
-    Tree_i tree;
+	std::cout << "testing AATree\n\n";
 
-    for (int i = 1; i <= 8; i++)
-    {
-        tree.insert(i);
-    }
+	HashMap<int> map;
 
-    printTree(tree.root(), tree.end(), 30);
+	map.insert("my key 00",  1);
+	map.insert("my key 01",  2);
+	map.insert("my key 02",  4);
+	map.insert("my key 03",  8);
+	map.insert("my key 04", 16);
+	map.insert("my key 05", 32);
+	map.insert("my key 06", 64);
 
-    //Hash_i hash;
-
-    //hash.insert("key_001", 0);
-    //hash.insert("key_002", 1);
-    //hash.insert("key_003", 2);
-    //hash.insert("key_004", 3);
-    //hash.insert("key_005", 4);
-    //hash.insert("key_006", 5);
-
-	std::cout << "\n";
-
-        
+	std::cout << map.get("my key 06") << std::endl;
 
 	system("pause");
 }

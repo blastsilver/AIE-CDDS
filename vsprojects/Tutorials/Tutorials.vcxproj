@@ -22,13 +22,13 @@
     <ClCompile Include="source\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\tutorials-linkedlist.h" />
-    <ClInclude Include="source\tutorials-node.h" />
-    <ClInclude Include="source\tutorials.h" />
-    <ClInclude Include="source\tutorials-aatree.h" />
-    <ClInclude Include="source\TutorialsBK.h" />
-    <ClInclude Include="source\tutorials-hashmap.h" />
-    <ClInclude Include="source\tutorials-hashpair.h" />
+    <ClInclude Include="source\AATree.h" />
+    <ClInclude Include="source\Comparable.h" />
+    <ClInclude Include="source\HashComparable.h" />
+    <ClInclude Include="source\HashMap.h" />
+    <ClInclude Include="source\Iterator.h" />
+    <ClInclude Include="source\LinkedList.h" />
+    <ClInclude Include="source\util.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{41327417-FCF8-4B8E-9E5D-2AEDE72233A0}</ProjectGuid>
