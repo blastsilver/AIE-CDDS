@@ -22,15 +22,6 @@
     <ClCompile Include="source\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\StateManager.cpp">
-      <Filter>Source Files\Reversi\StateManager</Filter>
-    </ClCompile>
-    <ClCompile Include="source\states.cpp">
-      <Filter>Source Files\Reversi\GameManager\states</Filter>
-    </ClCompile>
-    <ClCompile Include="source\GameManager.cpp">
-      <Filter>Source Files\Reversi\GameManager</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\main.h">

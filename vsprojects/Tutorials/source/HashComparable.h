@@ -1,6 +1,6 @@
 #pragma once
 
-namespace tutorials
+namespace util
 {
 	template <typename T> class HashComparable : public Comparable<int>
 	{

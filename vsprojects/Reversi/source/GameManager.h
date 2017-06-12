@@ -18,15 +18,15 @@
         // constructor
         GameManager();
         // WindowProcedure :: called on paint
-        void OnPaint();
+        void OnPaint(HWND hwnd);
         // WindowProcedure :: called on create
         void OnCreate(HWND hwnd);
         // WindowProcedure :: called on destroy
-        void OnDestroy();
+        void OnDestroy(HWND hwnd);
         // WindowProcedure :: called on mouse move
-        void OnMouseMove(int x, int y);
+        void OnMouseMove(HWND hwnd, int x, int y);
         // WindowProcedure :: called on mouse click
-        void OnMouseClick(int x, int y);
+        void OnMouseClick(HWND hwnd, int x, int y);
         // get current game state;
         GameState GetState();
     private:

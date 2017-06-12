@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Executable1", "vsprojects\E
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Executable2", "vsprojects\Executable2\Executable2.vcxproj", "{5B1FE5CB-ABA0-417E-B222-4A487E065D88}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest", "vsprojects\UnitTest\UnitTest.vcxproj", "{F0E24ACD-CC87-40FA-B549-9AA7EABB25DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -53,6 +55,14 @@ Global
 		{5B1FE5CB-ABA0-417E-B222-4A487E065D88}.Release|x64.Build.0 = Release|x64
 		{5B1FE5CB-ABA0-417E-B222-4A487E065D88}.Release|x86.ActiveCfg = Release|Win32
 		{5B1FE5CB-ABA0-417E-B222-4A487E065D88}.Release|x86.Build.0 = Release|Win32
+		{F0E24ACD-CC87-40FA-B549-9AA7EABB25DB}.Debug|x64.ActiveCfg = Debug|x64
+		{F0E24ACD-CC87-40FA-B549-9AA7EABB25DB}.Debug|x64.Build.0 = Debug|x64
+		{F0E24ACD-CC87-40FA-B549-9AA7EABB25DB}.Debug|x86.ActiveCfg = Debug|Win32
+		{F0E24ACD-CC87-40FA-B549-9AA7EABB25DB}.Debug|x86.Build.0 = Debug|Win32
+		{F0E24ACD-CC87-40FA-B549-9AA7EABB25DB}.Release|x64.ActiveCfg = Release|x64
+		{F0E24ACD-CC87-40FA-B549-9AA7EABB25DB}.Release|x64.Build.0 = Release|x64
+		{F0E24ACD-CC87-40FA-B549-9AA7EABB25DB}.Release|x86.ActiveCfg = Release|Win32
+		{F0E24ACD-CC87-40FA-B549-9AA7EABB25DB}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

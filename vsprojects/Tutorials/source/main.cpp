@@ -7,7 +7,7 @@
 #include <iostream>
 #include <Windows.h>
 
-using namespace tutorials;
+using namespace util;
 
 void gotoxy(int x, int y)
 {
