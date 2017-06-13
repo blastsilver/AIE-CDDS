@@ -28,7 +28,9 @@
     <ClInclude Include="source\HashMap.h" />
     <ClInclude Include="source\Iterator.h" />
     <ClInclude Include="source\LinkedList.h" />
+    <ClInclude Include="source\State.h" />
     <ClInclude Include="source\util.h" />
+    <ClInclude Include="source\StateManager.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{F0E24ACD-CC87-40FA-B549-9AA7EABB25DB}</ProjectGuid>

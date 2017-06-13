@@ -11,7 +11,7 @@ struct MyMessage
 	char text[100];
 };
 // global variables
-MyMessage * message;
+MyMessage message;
 PCOPYDATASTRUCT PCDS;
 
 LRESULT CALLBACK WindowProc(_In_ HWND hwnd, _In_ UINT uMsg, _In_ WPARAM wParam, _In_ LPARAM lParam)
@@ -27,20 +27,17 @@ LRESULT CALLBACK WindowProc(_In_ HWND hwnd, _In_ UINT uMsg, _In_ WPARAM wParam, 
 	{
 		// calculate string
 		std::string str;
-		if (message != nullptr)
-		{
-			str = std::string(message->text) + " :: [ ";
-			str += (message->msg == NULL ? "NULL" : std::to_string(message->msg)) + ", ";
-			str += (message->key == NULL ? "NULL" : std::to_string(message->key)) + ", ";
-			str += (message->mouseX == NULL ? "NULL" : std::to_string(message->mouseX)) + ", ";
-			str += (message->mouseY == NULL ? "NULL" : std::to_string(message->mouseY)) + " ]";
-		}
-		else str = "???UNKNOWN???";
+		str = std::string(message.text) + " :: [ ";
+		str += (message.msg == NULL ? "NULL" : std::to_string(message.msg)) + ", ";
+		str += (message.key == NULL ? "NULL" : std::to_string(message.key)) + ", ";
+		str += (message.mouseX == NULL ? "NULL" : std::to_string(message.mouseX)) + ", ";
+		str += (message.mouseY == NULL ? "NULL" : std::to_string(message.mouseY)) + " ]";
 		// paint text on screen
 		PAINTSTRUCT ps;
 		HDC hdc = BeginPaint(hwnd, &ps);
 		TextOut(hdc, 10, 10, str.c_str(), (int)str.size());
 		EndPaint(hwnd, &ps);
+        break;
 	}
 	case WM_COPYDATA:
 	{
@@ -53,12 +50,17 @@ LRESULT CALLBACK WindowProc(_In_ HWND hwnd, _In_ UINT uMsg, _In_ WPARAM wParam, 
 		// check byte size
 		if (PCDS->cbData != sizeof(MyMessage)) break;
 		// save current message
-		message = (MyMessage*)PCDS->lpData;
+		message.key = ((MyMessage*)PCDS->lpData)->key;
+        message.msg = ((MyMessage*)PCDS->lpData)->msg;
+        message.mouseX = ((MyMessage*)PCDS->lpData)->mouseX;
+        message.mouseY = ((MyMessage*)PCDS->lpData)->mouseY;
+        for (int i = 0; i < 100; i++) message.text[i] = ((MyMessage*)PCDS->lpData)->text[i];
 		// repaint the window
 		RECT rect;
 		GetClientRect(hwnd, &rect);
 		InvalidateRect(hwnd, &rect, TRUE);
 		UpdateWindow(hwnd);
+        break;
 	}
 	}
 	return DefWindowProc(hwnd, uMsg, wParam, lParam);

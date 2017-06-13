@@ -36,5 +36,11 @@
     <ClInclude Include="source\LinkedList.h">
       <Filter>Source Files\util</Filter>
     </ClInclude>
+    <ClInclude Include="source\StateManager.h">
+      <Filter>Source Files\util</Filter>
+    </ClInclude>
+    <ClInclude Include="source\State.h">
+      <Filter>Source Files\util</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
