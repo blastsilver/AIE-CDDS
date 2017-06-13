@@ -75,11 +75,11 @@ void main()
     list.pushFront(1);
     list.pushFront(2);
     list.pushFront(3);
+    print(list);
     // remove values [0, -3, 3]
     list.remove(0);
     list.popBack();
     list.popFront();
-    // print result [2, 1, -1, -2]
     print(list);
 
     // #################################################################################################
@@ -94,6 +94,7 @@ void main()
     AATree<Comparable<int>> tree;
     // insert values [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
     for (int i = 0; i < 15; i++) tree.insert(i + 1);
+    print(tree);
     // remove value [3, 4, 6, 7, 8, 11, 12, 14]
     tree.remove(8);
     tree.remove(3);
@@ -103,7 +104,6 @@ void main()
     tree.remove(12);
     tree.remove(14);
     tree.remove(7);
-    // print result [1, 2, 5, 8, 9, 10, 11, 12, 13, 14, 15] ONLY 3 LEVELS
     print(tree);
 
     // #################################################################################################
@@ -121,10 +121,10 @@ void main()
     map.insert("your", 1);
     map.insert("data", 2);
     map.insert("here", 3);
+    print(map);
     // remove values ["keep", "here"]
     map.remove("keep");
     map.remove("here");
-    // print result [{ "your": 1, "data": 2 }]
     print(map);
 
     // #################################################################################################

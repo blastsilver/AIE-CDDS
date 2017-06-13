@@ -8,51 +8,30 @@
     <Filter Include="Source Files\Reversi">
       <UniqueIdentifier>{a1bcba0b-b98c-462c-8bce-d713709a7628}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Reversi\StateManager">
-      <UniqueIdentifier>{fac3bf76-463a-405b-86a9-1f01e859211b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Reversi\GameManager">
-      <UniqueIdentifier>{5d6a3d69-0573-48c8-a85f-7ef09718254a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Reversi\GameManager\states">
-      <UniqueIdentifier>{fd39bad9-1100-465b-8b7b-73b537b54390}</UniqueIdentifier>
+    <Filter Include="Source Files\game">
+      <UniqueIdentifier>{7ecd67f0-3518-44e1-80fc-db2c5736d1de}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ReversiManager.cpp">
+      <Filter>Source Files\game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\main.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="source\GameManager.h">
-      <Filter>Source Files\Reversi\GameManager</Filter>
-    </ClInclude>
-    <ClInclude Include="source\State.h">
-      <Filter>Source Files\Reversi\StateManager</Filter>
-    </ClInclude>
-    <ClInclude Include="source\StateManager.h">
-      <Filter>Source Files\Reversi\StateManager</Filter>
-    </ClInclude>
     <ClInclude Include="source\Reversi.h">
       <Filter>Source Files\Reversi</Filter>
     </ClInclude>
-    <ClInclude Include="source\PVPstate.h">
-      <Filter>Source Files\Reversi\GameManager\states</Filter>
+    <ClInclude Include="Graphics.h">
+      <Filter>Source Files\Reversi</Filter>
     </ClInclude>
-    <ClInclude Include="source\MENUstate.h">
-      <Filter>Source Files\Reversi\GameManager\states</Filter>
-    </ClInclude>
-    <ClInclude Include="source\PAUSEstate.h">
-      <Filter>Source Files\Reversi\GameManager\states</Filter>
-    </ClInclude>
-    <ClInclude Include="source\P1WONstate.h">
-      <Filter>Source Files\Reversi\GameManager\states</Filter>
-    </ClInclude>
-    <ClInclude Include="source\P2WONstate.h">
-      <Filter>Source Files\Reversi\GameManager\states</Filter>
+    <ClInclude Include="ReversiManager.h">
+      <Filter>Source Files\game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

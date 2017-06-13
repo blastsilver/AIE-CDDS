@@ -289,10 +289,12 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
         }
         // events
         case WM_LBUTTONUP:
+        {
             Reversi::GameEventMouseClick();
             InvalidateRect(hwnd, NULL, FALSE);
             UpdateWindow(hwnd);
             break;
+        }
         case WM_MOUSEMOVE:
         {
             Reversi::GameEventMouseMove(LOWORD(lParam), HIWORD(lParam));
