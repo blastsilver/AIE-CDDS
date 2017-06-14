@@ -23,16 +23,16 @@ void MenuState::OnUpdate()
     if (GetKeyState('1') < 0) this->m_key[0] = true; else
     {
         // continue to tree state
-        if (this->m_key[0]) return this->m_manager->set(States::TreeState);
+        if (this->m_key[0]) return this->m_manager->SetState(States::TreeState);
     }
     if (GetKeyState('2') < 0) this->m_key[1] = true; else
     {
         // continue to hash state
-        if (this->m_key[1]) return this->m_manager->set(States::HashState);
+        if (this->m_key[1]) return this->m_manager->SetState(States::HashState);
     }
     if (GetKeyState('3') < 0) this->m_key[2] = true; else
     {
         // continue to list state
-        if (this->m_key[2]) return this->m_manager->set(States::ListState);
+        if (this->m_key[2]) return this->m_manager->SetState(States::ListState);
     }
 }

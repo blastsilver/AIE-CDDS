@@ -15,7 +15,7 @@ StateManager::~StateManager()
         this->m_currentState = nullptr;
     }
 };
-void StateManager::set(States state)
+void StateManager::SetState(States state)
 {
     // delete state if exists
     if (this->m_currentState != nullptr)
@@ -56,7 +56,7 @@ void StateManager::set(States state)
     // begin state
     m_currentState->OnBegin();
 }
-void StateManager::update()
+void StateManager::OnUpdate()
 {
     // check if state exists
     if (m_currentState != nullptr)

@@ -30,7 +30,7 @@ HashState::HashState(StateManager * manager)
 }
 void HashState::OnBegin()
 {
-    srand(time(NULL));
+    srand((unsigned int)time(NULL));
     // display state
     system("cls");
     std::cout << "<< HashState >>\n";
@@ -48,7 +48,7 @@ void HashState::OnUpdate()
         this->m_hash.erase();
         std::cout << "\n ~~ No Collisions! ~~ \n";
         system("pause");
-        return this->m_manager->set(States::MenuState);
+        return this->m_manager->SetState(States::MenuState);
     }
     else
     {
@@ -65,14 +65,14 @@ void HashState::OnUpdate()
             // error found
             std::cout << "\n\n ~~ COLLISION ERROR :: " << message << "\n ~~";
             system("pause");
-            return this->m_manager->set(States::MenuState);
+            return this->m_manager->SetState(States::MenuState);
         }
         catch (...)
         {
             // error found
             std::cout << "UNKNOWN COLLISION ERROR\n";
             system("pause");
-            return this->m_manager->set(States::MenuState);
+            return this->m_manager->SetState(States::MenuState);
         }
     }
 }

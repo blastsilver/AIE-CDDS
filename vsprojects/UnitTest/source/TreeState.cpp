@@ -47,7 +47,7 @@ void TreeState::OnUpdate()
         std::cout << ";\n\n";
         print(this->m_tree);
         system("pause");
-        this->m_manager->set(States::MenuState);
+        this->m_manager->SetState(States::MenuState);
     }
     else
     {

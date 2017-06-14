@@ -5,11 +5,11 @@ void main()
     // create state manager
     StateManager manager;
     // set current state to menu
-    manager.set(States::MenuState);
+    manager.SetState(States::MenuState);
     
     while (true)
     {
         // update current state
-        manager.update();
+        manager.OnUpdate();
     }
 }

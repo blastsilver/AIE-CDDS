@@ -9,6 +9,6 @@ public:
     StateManager();
     ~StateManager();
     // public functions
-    void set(States state);
-    void update();
+    void SetState(States state);
+    void OnUpdate();
 };
