@@ -5,42 +5,63 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Source Files\util">
+    <Filter Include="Source Files\StateManager">
+      <UniqueIdentifier>{0da442d3-d099-4850-b02a-e73e3dbee889}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Tutorials">
       <UniqueIdentifier>{69478561-1f0a-48cc-87bc-0accc95c9f17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\StateManager\states">
+      <UniqueIdentifier>{6f459db4-4fa6-495f-9e6d-cf54ed07119d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\StateManager.cpp">
+      <Filter>Source Files\StateManager</Filter>
+    </ClCompile>
+    <ClCompile Include="source\HashState.cpp">
+      <Filter>Source Files\StateManager\states</Filter>
+    </ClCompile>
+    <ClCompile Include="source\MenuState.cpp">
+      <Filter>Source Files\StateManager\states</Filter>
+    </ClCompile>
+    <ClCompile Include="source\TreeState.cpp">
+      <Filter>Source Files\StateManager\states</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ListState.cpp">
+      <Filter>Source Files\StateManager\states</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\util.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="source\Iterator.h">
-      <Filter>Source Files\util</Filter>
+      <Filter>Source Files\Tutorials</Filter>
     </ClInclude>
     <ClInclude Include="source\AATree.h">
-      <Filter>Source Files\util</Filter>
+      <Filter>Source Files\Tutorials</Filter>
     </ClInclude>
     <ClInclude Include="source\Comparable.h">
-      <Filter>Source Files\util</Filter>
+      <Filter>Source Files\Tutorials</Filter>
     </ClInclude>
     <ClInclude Include="source\HashComparable.h">
-      <Filter>Source Files\util</Filter>
+      <Filter>Source Files\Tutorials</Filter>
     </ClInclude>
     <ClInclude Include="source\HashMap.h">
-      <Filter>Source Files\util</Filter>
+      <Filter>Source Files\Tutorials</Filter>
     </ClInclude>
     <ClInclude Include="source\LinkedList.h">
-      <Filter>Source Files\util</Filter>
-    </ClInclude>
-    <ClInclude Include="source\StateManager.h">
-      <Filter>Source Files\util</Filter>
+      <Filter>Source Files\Tutorials</Filter>
     </ClInclude>
     <ClInclude Include="source\State.h">
-      <Filter>Source Files\util</Filter>
+      <Filter>Source Files\StateManager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\StateManager.h">
+      <Filter>Source Files\StateManager</Filter>
+    </ClInclude>
+    <ClInclude Include="source\main.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

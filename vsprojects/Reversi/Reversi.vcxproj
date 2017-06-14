@@ -19,14 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ReversiManager.cpp" />
     <ClCompile Include="source\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Graphics.h" />
-    <ClInclude Include="ReversiManager.h" />
     <ClInclude Include="source\main.h" />
-    <ClInclude Include="source\Reversi.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{498DD418-5F64-4242-83E6-0DE973E10BE8}</ProjectGuid>

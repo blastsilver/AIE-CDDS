@@ -5,33 +5,15 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Source Files\Reversi">
-      <UniqueIdentifier>{a1bcba0b-b98c-462c-8bce-d713709a7628}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\game">
-      <UniqueIdentifier>{7ecd67f0-3518-44e1-80fc-db2c5736d1de}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ReversiManager.cpp">
-      <Filter>Source Files\game</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\main.h">
       <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="source\Reversi.h">
-      <Filter>Source Files\Reversi</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphics.h">
-      <Filter>Source Files\Reversi</Filter>
-    </ClInclude>
-    <ClInclude Include="ReversiManager.h">
-      <Filter>Source Files\game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

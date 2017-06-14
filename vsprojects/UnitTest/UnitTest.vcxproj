@@ -19,7 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="source\ListState.cpp" />
+    <ClCompile Include="source\HashState.cpp" />
     <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\MenuState.cpp" />
+    <ClCompile Include="source\StateManager.cpp" />
+    <ClCompile Include="source\TreeState.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\AATree.h" />
@@ -29,7 +34,7 @@
     <ClInclude Include="source\Iterator.h" />
     <ClInclude Include="source\LinkedList.h" />
     <ClInclude Include="source\State.h" />
-    <ClInclude Include="source\util.h" />
+    <ClInclude Include="source\main.h" />
     <ClInclude Include="source\StateManager.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
