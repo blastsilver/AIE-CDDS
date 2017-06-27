@@ -1,5 +1,4 @@
-# Reversi
-The Reversi Game
+# AIE-CDDS
 
 #### Print log
 
